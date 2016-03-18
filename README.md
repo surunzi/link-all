@@ -14,12 +14,13 @@ Inside your project folder, create a file named **linkfile.js**:
 
 ```javascript
 module.exports = {
+    // The key is target folder, the value is the file you want to symlink into it.
     'moduleA': [
-        'js/moduleA.js',
+        'js/moduleA.js:moduleB.js',
+        // If you want to change the filename, append it after ":"
         'css/moduleA.css',
         'html/moduleA.html'
     ]
-    // The key is target folder, the value is the file you want to symlink into it.
 };
 ```
 

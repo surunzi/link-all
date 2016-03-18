@@ -23,10 +23,13 @@ _.each(config, function (files, output)
 
         files.forEach(function (file)
         {
-            file = path.resolve(cwd, file);
+            file = file.split(':');
+            var targetName = file[1];
+            file = path.resolve(cwd, file[0]);
 
-            var fileName = path.basename(file),
-                outputPath = path.resolve(output, fileName);
+            var fileName = path.basename(file);
+            targetName = targetName || fileName;
+            var outputPath = path.resolve(output, targetName);
 
             fs.symlink(file, outputPath, function (err)
             {
