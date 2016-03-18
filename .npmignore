@@ -1,0 +1,5 @@
+/.idea/
+/test/
+.gitignore
+.npmignore
+linkfile.js
